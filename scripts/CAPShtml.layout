@@ -1,0 +1,12 @@
+\begin{issn}
+<li>\format[HTMLChars,AuthorFirstFirstCommas]{\author}. "<a href="http://www.ditec.um.es/caps/pdfs/\bibtexkey.pdf">\format[HTMLChars]{\title}</a>". \format[HTMLChars]{\journal}, Vol. \volume, No. \number, pp. \format[FormatPagesForHTML]{\pages}, \month \year.<br></br></li> <!-- \comment -->
+\end{issn}
+
+\begin{booktitle}
+<li>\format[HTMLChars,AuthorFirstFirstCommas]{\author}. "<a href="http://www.ditec.um.es/caps/pdfs/\bibtexkey.pdf">\format[HTMLChars,Replace("\x24\x5E2\x24,<sup>2</sup>")]{\title}</a>". \format[HTMLChars]{\booktitle}, pp. \format[FormatPagesForHTML]{\pages}, \address, \month \year.<br></br></li> <!-- \comment -->
+\end{booktitle}
+
+\begin{chapter}
+<li>\format[HTMLChars,AuthorFirstFirstCommas]{\author}. "<a href="http://www.ditec.um.es/caps/pdfs/\bibtexkey.pdf">\format[HTMLChars]{\chapter}</a>". \format[HTMLChars]{\title}, \format[FormatChars]{\publisher}, pp. \format[FormatPagesForHTML]{\pages}, \month \year.<br></br></li> <!-- \comment -->
+\end{chapter}
+

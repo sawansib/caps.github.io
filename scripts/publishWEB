@@ -1,0 +1,13 @@
+#############################################################
+## Publica la pagina web en DiTEC (juanf 02/03/11          ##
+#############################################################
+
+#!/bin/bash
+
+./generatePUBLICATIONS 2001 `date +%Y`
+
+cd .. ; svn ci -m "Actualización página web..."
+
+ssh ditec.um.es "cd /var/www/html/caps ; svn update"
+ssh ditec.um.es "cd /var/www/html/caps/pdfs ; svn update"
+
