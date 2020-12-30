@@ -35,4 +35,3 @@ do
 done
 
 cat publications_footer.html >> ../publications.html
-
