@@ -1,0 +1,38 @@
+#############################################################
+## Genera el fichero publications.html a partir del bibtex ##
+## de publicaciones del grupo (meacacio 20/01/2011)        ##
+## Requisitos:						   ##
+##	- Jabref				   	   ##
+##	- Tener importado el filtro CAPShtml.layout	   ##
+#############################################################
+#!/bin/bash
+YEAR_FROM=$1
+YEAR_TO=$2
+
+BIBTEX_DIR=../../publicaciones
+TEXFILES_DIR=./TexFiles
+
+if [ $# != 2 ]
+then 
+	echo "Uso: generatePUBLICATIONS year_from year_to"
+	exit 1
+fi
+
+cp publications_header.html ../publications.html
+while true
+do
+	echo "Añadiendo Año "$YEAR_TO
+	echo "<span style=\"font-weight: bold;\">["$YEAR_TO"]</span><br></br><br></br><ul>" >> ../publications.html
+	cat publications_body.html | grep $YEAR_TO | grep -v "<!-- National -->" >> ../publications.html
+	echo "</ul>" >> ../publications.html
+
+	((YEAR_TO--))
+	if ((YEAR_FROM > YEAR_TO)) 
+	then
+		break
+	fi
+
+done
+
+cat publications_footer.html >> ../publications.html
+
