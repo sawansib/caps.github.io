@@ -20,7 +20,7 @@ fi
 
 echo Generando página de publicaciones desde $YEAR_FROM hasta $YEAR_TO
 echo Llamando a Jabref...
-jabref -o publications_body.html,CAPShtml -n true $BIBTEX_DIR/publicaciones.bib
+/var/lib/snapd/snap/bin/jabref -o publications_body.html,CAPS -n caps_pub.bib
 cp publications_header.html ../publications.html
 while true
 do
