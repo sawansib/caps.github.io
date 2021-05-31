@@ -31,7 +31,8 @@
   isbn =         {978-1-7281-8643-6},
   file =          {pdfs/ejgomez-ispass21.pdf}
 }
-{aros-isca21,
+
+@Article{aros-isca21,
   author = 	 {Alberto Ros and Alexandra Jimborean},
   title = 	 {A Cost-Effective Entangling Prefetcher for Instructions},
   booktitle =    {48th International Symposium on Computer Architecture (ISCA)},
