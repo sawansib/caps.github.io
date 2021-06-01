@@ -1,44 +1,10 @@
-<tr id="DBLP:journals/corr/abs-2103-07977" class="entry">
-	<td>Garg R, Qin E, Mu&ntilde;oz-Mart\inez F, Guirado R, Jain A, Abadal S, Abell&aacute;n JL, Acacio ME, Alarc&oacute;n E, Rajamanickam S and Krishna T (2021), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:journals/corr/abs-2103-07977.pdf">A Taxonomy for Classification and Comparison of Dataflows for GNN Accelerators</a>"</i>, CoRR.  Vol. abs/2103.07977
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:journals/corr/abs-2103-07977','bibtex')">BibTeX</a>] [<a href="https://arxiv.org/abs/2103.07977" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:journals/corr/abs-2103-07977" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{DBLP:journals/corr/abs-2103-07977,
-  author = {Raveesh Garg and Eric Qin and Francisco Mu&ntilde;oz-Mart\inez and Robert Guirado and Akshay Jain and Sergi Abadal and Jos&eacute; L. Abell&aacute;n and Manuel E. Acacio and Eduard Alarc&oacute;n and Sivasankaran Rajamanickam and Tushar Krishna},
-  title = {A Taxonomy for Classification and Comparison of Dataflows for GNN Accelerators},
-  journal = {CoRR},
-  year = {2021},
-  volume = {abs/2103.07977},
-  url = {https://arxiv.org/abs/2103.07977}
-}
-</pre></td>
-</tr><tr id="DBLP:journals/corr/abs-2103-07977" class="entry">
-	<td>Garg R, Qin E, Mu&ntilde;oz-Mart\inez F, Guirado R, Jain A, Abadal S, Abell&aacute;n JL, Acacio ME, Alarc&oacute;n E, Rajamanickam S and Krishna T (2021), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:journals/corr/abs-2103-07977.pdf">A Taxonomy for Classification and Comparison of Dataflows for GNN Accelerators</a>"</i>, CoRR.  Vol. abs/2103.07977
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:journals/corr/abs-2103-07977','bibtex')">BibTeX</a>] [<a href="https://arxiv.org/abs/2103.07977" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:journals/corr/abs-2103-07977" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{DBLP:journals/corr/abs-2103-07977,
-  author = {Raveesh Garg and Eric Qin and Francisco Mu&ntilde;oz-Mart\inez and Robert Guirado and Akshay Jain and Sergi Abadal and Jos&eacute; L. Abell&aacute;n and Manuel E. Acacio and Eduard Alarc&oacute;n and Sivasankaran Rajamanickam and Tushar Krishna},
-  title = {A Taxonomy for Classification and Comparison of Dataflows for GNN Accelerators},
-  journal = {CoRR},
-  year = {2021},
-  volume = {abs/2103.07977},
-  url = {https://arxiv.org/abs/2103.07977}
-}
-</pre></td>
-</tr><tr id="aros-micro20" class="entry">
-	<td>Alberto Ros SK (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/aros-micro20.pdf">Speculative Enforcement of Store Atomicity</a>"</i>, In International Symposium on Microarchitecture (MICRO). 
+<tr id="aros-micro20" class="entry">
+	<td>Alberto Ros and Stefanos Kaxiras (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/aros-micro20.pdf">Speculative Enforcement of Store Atomicity</a>"</i>, In International Symposium on Microarchitecture (MICRO). 
 	<p class="infolinks">[<a href="javascript:toggleInfo('aros-micro20','abstract')">Abstract</a>] [<a href="javascript:toggleInfo('aros-micro20','bibtex')">BibTeX</a>]</p>
 	</td>
 </tr>
 <tr id="abs_aros-micro20" class="abstract noshow">
-	<td><b>Abstract</b>: Various memory consistency model implementations store→store, store→load, load→store) appear to respect at all<br>(e.g., x86, SPARC) willfully allow a core to see its own stores times memory order.<br>while they are in limbo, i.e., executed (and perhaps retired) but Total Store Order (TSO) relaxes the store→load order with<br>not yet inserted in memory order. This is known as store-to-load<br>forwarding and it is a necessity to safeguard the local thread's the express purpose of accommodating a store buffer. The<br>sequential program semantics while achieving high performance. store buffer is a critical component for performance. It allows<br>However, this can lead to counter-intuitive behaviours, requiring a core to retire its store instructions and continue executing<br>fences to prevent such behaviours when needed. without having to wait for the stores to write memory. In</td>
+	<td><b>Abstract</b>: Various memory consistency model implementations (e.g., x86, SPARC) willfully allow a core to see its own stores while they are in limbo, i.e., executed (and perhaps retired) but not yet inserted in memory order. This is known as store-to-load forwarding and it is a necessity to safeguard the local thread's sequential program semantics while achieving high performance. However, this can lead to counter-intuitive behaviours, requiring fences to prevent such behaviours when needed.Other vendors (e.g., IBM 370 and the z/Architecture series) opt for enforcing what we call in this work store atomicity, that is, disallowing a core to see its own stores before they are written to memory, trading off performance for a more intuitive memory model. Ideally, we want a stricter model to ease programability at the same time that architects can provide high-performance solutions. We make a simple observation. What holds for any other rule in a consistency model, also holds for store atomicity: it is not a crime to break the rule, unless we get caught.In this work, we detail the different ways of detecting a store atomicity violation. This leads us to a new insight: a load performed by a forwarding from an in-limbo store is not speculative; younger loads performed after that forwarding are. Based on this insight we propose an effective and cheap speculative approach to dynamically enforce store atomicity only when the detection of its violation actually occurs. In practice, these cases are rare during the execution of a program. In all other cases (the bulk of the execution of a program) store-to-load forwarding can be done without violating store atomicity. The end result is that we provide the best of both worlds: a more intuitive store-atomic memory model, i.e., the 370 model, with the performance and cost approaching (at an average of just 2.5% and 2.7% overhead for parallel and sequential applications, respectively) that of a non-store-atomic model, i.e., the x86 model.</td>
 </tr>
 <tr id="bib_aros-micro20" class="bibtex noshow">
 <td><b>BibTeX</b>:
@@ -56,7 +22,7 @@
 	</td>
 </tr>
 <tr id="abs_jcebrian-micro20" class="abstract noshow">
-	<td><b>Abstract</b>: Virtually all processors today employ a store buffer<br>(SB) to hide store latency. However, when the store buffer is full,<br>store latency is exposed to the processor causing pipeline stalls.<br>The default strategies to mitigate these stalls are to issue prefetch<br>for ownership requests when store instructions commit and to<br>continuously increase the store buffer size. While these strategies<br>considerably increase memory-level parallelism for stores, there<br>are still applications that suffer deeply from stalls caused by<br>the store buffer. Even worse, store-buffer induced stalls increase<br>considerably when simultaneous multi-threading is enabled, as<br>the store buffer is statically partitioned among the threads.<br>In this paper, we propose a highly selective and very aggressive<br>prefetching strategy to minimize store-buffer induced stalls. Our<br>proposal, Store-Prefetch Burst (SPB), is based on the following<br>insights: i) the majority of store-buffer induced stalls are caused<br>by a few stores; ii) the access pattern of such stores are<br>easily predictable; and iii) the latency of the stores is not<br>commonly hidden by standard cache prefetchers, as hiding their<br>latency would require tremendous prefetch aggressiveness. SPB<br>accurately detects contiguous store-access patterns (requiring just<br>67 bits of storage) and prefetches the remaining memory blocks<br>of the accessed page in a single burst request to the L1 controller.<br>SPB matches the performance of a 1024-entry SB implementation<br>on a 56-entry SB (i.e., Skylake architecture). For a 14-entry SB<br>(e.g., running four logical cores), it achieves 95.0% of that ideal<br>performance, on average, for SPEC CPU 2017. Additionally, a<br>20-entry store buffer that incorporates SPB achieves the average<br>performance of a standard 56-entry store buffer.</td>
+	<td><b>Abstract</b>: Virtually all processors today employ a store buffer (SB) to hide store latency. However, when the store buffer is full, store latency is exposed to the processor causing pipeline stalls. The default strategies to mitigate these stalls are to issue prefetch for ownership requests when store instructions commit and to continuously increase the store buffer size. While these strategies considerably increase memory-level parallelism for stores, there are still applications that suffer deeply from stalls caused by the store buffer. Even worse, store-buffer induced stalls increase considerably when simultaneous multi-threading is enabled, as the store buffer is statically partitioned among the threads.<br>In this paper, we propose a highly selective and very aggressive prefetching strategy to minimize store-buffer induced stalls. Our proposal, Store-Prefetch Burst (SPB), is based on the following insights: i) the majority of store-buffer induced stalls are caused by a few stores; ii) the access pattern of such stores are easily predictable; and iii) the latency of the stores is not commonly hidden by standard cache prefetchers, as hiding their latency would require tremendous prefetch aggressiveness. SPB accurately detects contiguous store-access patterns (requiring just 67 bits of storage) and prefetches the remaining memory blocks of the accessed page in a single burst request to the L1 controller. SPB matches the performance of a 1024-entry SB implementation on a 56-entry SB (i.e., Skylake architecture). For a 14-entry SB (e.g., running four logical cores), it achieves 95.0% of that ideal performance, on average, for SPEC CPU 2017. Additionally, a<br>20-entry store buffer that incorporates SPB achieves the average performance of a standard 56-entry store buffer.</td>
 </tr>
 <tr id="bib_jcebrian-micro20" class="bibtex noshow">
 <td><b>BibTeX</b>:
@@ -66,98 +32,6 @@
   title = {Boosting Store Buffer Efficiency with Store-Prefetch Bursts},
   booktitle = {International Symposium on Microarchitecture (MICRO)},
   year = {2020}
-}
-</pre></td>
-</tr><tr id="DBLP:journals/tpds/GilPRA20" class="entry">
-	<td>Gil JRT, Pascual RF, Ros A and Acacio ME (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:journals/tpds/GilPRA20.pdf">Concurrent Irrevocability in Best-Effort Hardware Transactional Memory</a>"</i>, IEEE Trans. Parallel Distributed Syst..  Vol. 31(6), pp. 1301-1315.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:journals/tpds/GilPRA20','bibtex')">BibTeX</a>] [<a href="https://doi.org/10.1109/TPDS.2019.2963030" target="_blank">DOI</a>] [<a href="https://doi.org/10.1109/TPDS.2019.2963030" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:journals/tpds/GilPRA20" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{DBLP:journals/tpds/GilPRA20,
-  author = {J. Rub&eacute;n Titos Gil and Ricardo Fern&aacute;ndez Pascual and Alberto Ros and Manuel E. Acacio},
-  title = {Concurrent Irrevocability in Best-Effort Hardware Transactional Memory},
-  journal = {IEEE Trans. Parallel Distributed Syst.},
-  year = {2020},
-  volume = {31},
-  number = {6},
-  pages = {1301--1315},
-  url = {https://doi.org/10.1109/TPDS.2019.2963030},
-  doi = {10.1109/TPDS.2019.2963030}
-}
-</pre></td>
-</tr><tr id="DBLP:journals/jpdc/GilPRA20" class="entry">
-	<td>Gil JRT, Pascual RF, Ros A and Acacio ME (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:journals/jpdc/GilPRA20.pdf">PfTouch: Concurrent page-fault handling for Intel restricted transactional memory</a>"</i>, J. Parallel Distributed Comput..  Vol. 145, pp. 111-123.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:journals/jpdc/GilPRA20','bibtex')">BibTeX</a>] [<a href="https://doi.org/10.1016/j.jpdc.2020.06.009" target="_blank">DOI</a>] [<a href="https://doi.org/10.1016/j.jpdc.2020.06.009" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:journals/jpdc/GilPRA20" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{DBLP:journals/jpdc/GilPRA20,
-  author = {J. Rub&eacute;n Titos Gil and Ricardo Fern&aacute;ndez Pascual and Alberto Ros and Manuel E. Acacio},
-  title = {PfTouch: Concurrent page-fault handling for Intel restricted transactional memory},
-  journal = {J. Parallel Distributed Comput.},
-  year = {2020},
-  volume = {145},
-  pages = {111--123},
-  url = {https://doi.org/10.1016/j.jpdc.2020.06.009},
-  doi = {10.1016/j.jpdc.2020.06.009}
-}
-</pre></td>
-</tr><tr id="DBLP:conf/ispass/MatthewsMGOT0HA20" class="entry">
-	<td>Matthews O, Manocha A, Giri D, Orenes-Vera M, Tureci E, Sorensen T, Ham TJ, Arag&oacute;n JL, Carloni LP and Martonosi M (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:conf/ispass/MatthewsMGOT0HA20.pdf">MosaicSim: A Lightweight, Modular Simulator for Heterogeneous Systems</a>"</i>, In IEEE International Symposium on Performance Analysis of Systems and Software, ISPASS 2020, Boston, MA, USA, August 23-25, 2020. , pp. 136-148. IEEE.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:conf/ispass/MatthewsMGOT0HA20','bibtex')">BibTeX</a>] [<a href="https://doi.org/10.1109/ISPASS48437.2020.00029" target="_blank">DOI</a>] [<a href="https://doi.org/10.1109/ISPASS48437.2020.00029" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:conf/ispass/MatthewsMGOT0HA20" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{DBLP:conf/ispass/MatthewsMGOT0HA20,
-  author = {Opeoluwa Matthews and Aninda Manocha and Davide Giri and Marcelo Orenes-Vera and Esin Tureci and Tyler Sorensen and Tae Jun Ham and Juan L. Arag&oacute;n and Luca P. Carloni and Margaret Martonosi},
-  title = {MosaicSim: A Lightweight, Modular Simulator for Heterogeneous Systems},
-  booktitle = {IEEE International Symposium on Performance Analysis of Systems and Software, ISPASS 2020, Boston, MA, USA, August 23-25, 2020},
-  publisher = {IEEE},
-  year = {2020},
-  pages = {136--148},
-  url = {https://doi.org/10.1109/ISPASS48437.2020.00029},
-  doi = {10.1109/ISPASS48437.2020.00029}
-}
-</pre></td>
-</tr><tr id="DBLP:journals/corr/abs-2004-07415" class="entry">
-	<td>Matthews O, Manocha A, Giri D, Orenes-Vera M, Tureci E, Sorensen T, Ham TJ, Arag&oacute;n JL, Carloni LP and Martonosi M (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:journals/corr/abs-2004-07415.pdf">The MosaicSim Simulator (Full Technical Report)</a>"</i>, CoRR.  Vol. abs/2004.07415
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:journals/corr/abs-2004-07415','bibtex')">BibTeX</a>] [<a href="https://arxiv.org/abs/2004.07415" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:journals/corr/abs-2004-07415" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{DBLP:journals/corr/abs-2004-07415,
-  author = {Opeoluwa Matthews and Aninda Manocha and Davide Giri and Marcelo Orenes-Vera and Esin Tureci and Tyler Sorensen and Tae Jun Ham and Juan L. Arag&oacute;n and Luca P. Carloni and Margaret Martonosi},
-  title = {The MosaicSim Simulator (Full Technical Report)},
-  journal = {CoRR},
-  year = {2020},
-  volume = {abs/2004.07415},
-  url = {https://arxiv.org/abs/2004.07415}
-}
-</pre></td>
-</tr><tr id="DBLP:journals/corr/abs-2006-07137" class="entry">
-	<td>Mu&ntilde;oz-Mart\inez F, Abell&aacute;n JL, Acacio ME and Krishna T (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:journals/corr/abs-2006-07137.pdf">STONNE: A Detailed Architectural Simulator for Flexible Neural Network Accelerators</a>"</i>, CoRR.  Vol. abs/2006.07137
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:journals/corr/abs-2006-07137','bibtex')">BibTeX</a>] [<a href="https://arxiv.org/abs/2006.07137" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:journals/corr/abs-2006-07137" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@article{DBLP:journals/corr/abs-2006-07137,
-  author = {Francisco Mu&ntilde;oz-Mart\inez and Jos&eacute; L. Abell&aacute;n and Manuel E. Acacio and Tushar Krishna},
-  title = {STONNE: A Detailed Architectural Simulator for Flexible Neural Network Accelerators},
-  journal = {CoRR},
-  year = {2020},
-  volume = {abs/2006.07137},
-  url = {https://arxiv.org/abs/2006.07137}
 }
 </pre></td>
 </tr><tr id="aros-cal20" class="entry">
@@ -240,25 +114,6 @@
   number = {Section 4},
   pages = {205--216},
   doi = {10.1145/3410463.3414645}
-}
-</pre></td>
-</tr><tr id="DBLP:conf/iccad/0001MTOAM20" class="entry">
-	<td>Sorensen T, Manocha A, Tureci E, Orenes-Vera M, Arag&oacute;n JL and Martonosi M (2020), <i>"<a href="http://www.ditec.um.es/caps/pdfs/DBLP:conf/iccad/0001MTOAM20.pdf">A Simulator and Compiler Framework for Agile Hardware-Software Co-design Evaluation and Exploration</a>"</i>, In IEEE/ACM International Conference On Computer Aided Design, ICCAD 2020, San Diego, CA, USA, November 2-5, 2020. , pp. 97:1-97:9. IEEE.
-	<p class="infolinks"> [<a href="javascript:toggleInfo('DBLP:conf/iccad/0001MTOAM20','bibtex')">BibTeX</a>] [<a href="https://doi.org/10.1145/3400302.3415751" target="_blank">DOI</a>] [<a href="https://doi.org/10.1145/3400302.3415751" target="_blank">URL</a>]</p>
-	</td>
-</tr>
-<tr id="bib_DBLP:conf/iccad/0001MTOAM20" class="bibtex noshow">
-<td><b>BibTeX</b>:
-<pre>
-@inproceedings{DBLP:conf/iccad/0001MTOAM20,
-  author = {Tyler Sorensen and Aninda Manocha and Esin Tureci and Marcelo Orenes-Vera and Juan L. Arag&oacute;n and Margaret Martonosi},
-  title = {A Simulator and Compiler Framework for Agile Hardware-Software Co-design Evaluation and Exploration},
-  booktitle = {IEEE/ACM International Conference On Computer Aided Design, ICCAD 2020, San Diego, CA, USA, November 2-5, 2020},
-  publisher = {IEEE},
-  year = {2020},
-  pages = {97:1--97:9},
-  url = {https://doi.org/10.1145/3400302.3415751},
-  doi = {10.1145/3400302.3415751}
 }
 </pre></td>
 </tr><tr id="rtitos-tpds20" class="entry">
