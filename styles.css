@@ -314,6 +314,7 @@ form.searchform p {
     margin: 5px 0;
 }
 span.required {
+    font-size: 13px;
     color: #FF0000;
     font-family: Verdana,Arial,Helvetica,sans-serif;
 }
