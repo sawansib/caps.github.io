@@ -249,6 +249,7 @@ table {
 }
 th,
 td {
+  text-align: -webkit-center;
   padding: 10px;
 }
 th {
